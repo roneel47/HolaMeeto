@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -6,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Copy, Share2, Trash2, ExternalLink, History, PlusCircle } from 'lucide-react';
+import { Copy, Share2, Trash2, ExternalLink, History, PlusCircle, Video, UserCircle2 } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 interface MeetingHistoryItem {
@@ -176,14 +177,20 @@ export default function InstantConnectForm() {
   return (
     <Card className="w-full shadow-xl">
       <CardHeader>
-        <CardTitle className="text-2xl">Create a New Meeting</CardTitle>
+        <CardTitle className="text-2xl flex items-center">
+          <Video className="mr-3 h-7 w-7 text-primary" />
+          Create a New Meeting
+        </CardTitle>
         <CardDescription>
           Enter an optional nickname and click "Start Meeting" to generate a Jitsi Meet link.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-2">
-          <Label htmlFor="nickname">Nickname (Optional)</Label>
+          <Label htmlFor="nickname" className="flex items-center text-base">
+            <UserCircle2 className="mr-2 h-5 w-5 text-muted-foreground" />
+            Nickname (Optional)
+          </Label>
           <Input
             id="nickname"
             type="text"
@@ -195,7 +202,7 @@ export default function InstantConnectForm() {
         </div>
         <Button
           onClick={handleGenerateMeeting}
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6" // Updated button color to primary
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6"
           aria-label="Start a new meeting"
         >
           <PlusCircle className="mr-2 h-5 w-5" />
@@ -232,7 +239,7 @@ export default function InstantConnectForm() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <History className="h-6 w-6 text-primary" />
+            <History className="h-7 w-7 text-primary" />
             <CardTitle className="text-2xl">Recent Meetings</CardTitle>
           </div>
           {meetingHistory.length > 0 && (
