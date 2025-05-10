@@ -53,13 +53,13 @@
     --sidebar-ring: 20 85% 55%;
 
     /* Gradient and Shape Colors - Light Theme */
-    --gradient-color-start-light-val: 15 75% 48%; /* Dark Orangish Red */
-    --gradient-color-end-light-val: 35 95% 72%;   /* Light Orange */
-    --gradient-start-light: hsl(var(--gradient-color-start-light-val)); /* Gradient start color for light theme */
-    --gradient-end-light: hsl(var(--gradient-color-end-light-val));   /* Gradient end color for light theme */
+    --gradient-color-start-light-val: 15 80% 45%; /* More vivid Dark Orangish Red */
+    --gradient-color-end-light-val: 30 90% 68%;   /* Richer, slightly darker Light Orange */
+    --gradient-start-light: hsl(var(--gradient-color-start-light-val));
+    --gradient-end-light: hsl(var(--gradient-color-end-light-val));
     
-    --shape-1-color-light: hsl(var(--accent) / 0.1); /* Subtle accent for shapes */
-    --shape-2-color-light: hsl(var(--primary) / 0.07);  /* Subtle primary for shapes */
+    --shape-1-color-light: hsl(var(--accent) / 0.25); /* Increased opacity for accent shape */
+    --shape-2-color-light: hsl(var(--primary) / 0.20);  /* Increased opacity for primary shape */
     
     --radius: 0.5rem;
   }
@@ -112,13 +112,13 @@
     --sidebar-ring: 20 80% 60%;
 
     /* Gradient and Shape Colors - Dark Theme */
-    --gradient-color-start-dark-val: 15 55% 28%; /* Darker Dark Orangish Red for dark theme */
-    --gradient-color-end-dark-val: 35 70% 42%;  /* Darker Light Orange for dark theme */
-    --gradient-start-dark: hsl(var(--gradient-color-start-dark-val)); /* Gradient start color for dark theme */
-    --gradient-end-dark: hsl(var(--gradient-color-end-dark-val));   /* Gradient end color for dark theme */
+    --gradient-color-start-dark-val: 15 55% 28%; 
+    --gradient-color-end-dark-val: 35 70% 42%;  
+    --gradient-start-dark: hsl(var(--gradient-color-start-dark-val));
+    --gradient-end-dark: hsl(var(--gradient-color-end-dark-val));
     
-    --shape-1-color-dark: hsl(var(--accent) / 0.12);  /* Subtle accent for shapes */
-    --shape-2-color-dark: hsl(var(--primary) / 0.1); /* Subtle primary for shapes */
+    --shape-1-color-dark: hsl(var(--accent) / 0.28);  /* Increased opacity for accent shape */
+    --shape-2-color-dark: hsl(var(--primary) / 0.22); /* Increased opacity for primary shape */
   }
 
   * {
