@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-}
+/* body font-family is now set within @layer base */
 
 @layer base {
   :root {
-    --background: 0 0% 94.1%; /* #f0f0f0 light gray */
+    --background: 0 0% 94.1%; /* Original light gray, can be used as fallback or by components */
     --foreground: 0 0% 3.9%; /* Default dark text */
     --card: 0 0% 100%; /* White */
     --card-foreground: 0 0% 3.9%;
@@ -41,9 +39,16 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Gradient and Shape Colors - Light Theme */
+    --gradient-start-light: hsl(207 68% 95%); /* Lighter blue based on primary */
+    --gradient-end-light: hsl(0 0% 97%);   /* Off-white, similar to original background */
+    --shape-1-color-light: hsl(var(--primary) / 0.12); /* Primary with low alpha */
+    --shape-2-color-light: hsl(var(--accent) / 0.08);  /* Accent with low alpha */
   }
+
   .dark {
-    --background: 220 20% 10%; /* Deep cool dark blue/gray */
+    --background: 220 20% 10%; /* Original_dark_background, can be used as fallback or by components */
     --foreground: 0 0% 95%; /* Off-white */
     --card: 220 20% 13%; /* Slightly lighter than background */
     --card-foreground: 0 0% 95%;
@@ -75,14 +80,82 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
 
-@layer base {
+    /* Gradient and Shape Colors - Dark Theme */
+    --gradient-start-dark: hsl(220 20% 15%); /* Slightly lighter version of dark background */
+    --gradient-end-dark: hsl(220 20% 8%);   /* Slightly darker version of dark background */
+    --shape-1-color-dark: hsl(var(--primary) / 0.1);  /* Primary with low alpha */
+    --shape-2-color-dark: hsl(var(--accent) / 0.07); /* Accent with low alpha */
+  }
+
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background-color: var(--gradient-end-light); /* Fallback */
+    background-image: linear-gradient(135deg, var(--gradient-start-light) 0%, var(--gradient-end-light) 100%);
+    position: relative; /* Context for pseudo-elements if they were absolute */
+    overflow-x: hidden; /* Prevent horizontal scroll from large shapes */
+  }
+
+  .dark body {
+    background-color: var(--gradient-end-dark); /* Fallback */
+    background-image: linear-gradient(135deg, var(--gradient-start-dark) 0%, var(--gradient-end-dark) 100%);
+  }
+
+  /* Abstract Shapes */
+  body::before,
+  body::after {
+    content: "";
+    position: fixed; /* Fixed position to stay in viewport background */
+    border-radius: 50%;
+    z-index: -1; /* Behind all page content */
+    filter: blur(90px); /* Soft, diffuse shapes */
+    will-change: transform, opacity; /* Hint for animation performance */
+  }
+
+  /* Light theme shapes */
+  body::before {
+    width: clamp(350px, 45vw, 550px); /* Responsive size */
+    height: clamp(350px, 45vw, 550px);
+    background: var(--shape-1-color-light);
+    top: -5%; /* Positioned partially off-screen */
+    left: -10%;
+    animation: floatShapeAnim1 28s infinite alternate ease-in-out;
+  }
+
+  body::after {
+    width: clamp(300px, 40vw, 500px);
+    height: clamp(300px, 40vw, 500px);
+    background: var(--shape-2-color-light);
+    bottom: -8%; /* Positioned partially off-screen */
+    right: -12%;
+    animation: floatShapeAnim2 32s infinite alternate ease-in-out;
+    animation-delay: -4s; /* Stagger animation */
+  }
+
+  /* Dark theme shapes */
+  .dark body::before {
+    background: var(--shape-1-color-dark);
+  }
+
+  .dark body::after {
+    background: var(--shape-2-color-dark);
+  }
+
+  @keyframes floatShapeAnim1 {
+    0% { transform: translate(-5%, -5%) scale(0.9) rotate(-5deg); opacity: 0.6; }
+    50% { transform: translate(5%, 8%) scale(1.1) rotate(8deg); opacity: 0.85; }
+    100% { transform: translate(-5%, -5%) scale(0.9) rotate(-5deg); opacity: 0.6; }
+  }
+
+  @keyframes floatShapeAnim2 {
+    0% { transform: translate(8%, 5%) scale(0.95) rotate(3deg); opacity: 0.55; }
+    50% { transform: translate(-10%, -10%) scale(1.05) rotate(-10deg); opacity: 0.75; }
+    100% { transform: translate(8%, 5%) scale(0.95) rotate(3deg); opacity: 0.55; }
   }
 }
