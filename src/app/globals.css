@@ -6,86 +6,113 @@
 
 @layer base {
   :root {
-    --background: 0 0% 94.1%; /* Original light gray, can be used as fallback or by components */
-    --foreground: 0 0% 3.9%; /* Default dark text */
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 207 68% 54%; /* #3490dc calming blue */
-    --primary-foreground: 0 0% 98%; /* Light text for primary */
-    --secondary: 0 0% 96.1%; /* Very light gray */
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 90%; /* Slightly darker gray for muted elements */
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 167 44% 58%; /* #64c5b1 teal */
-    --accent-foreground: 0 0% 9%; /* Dark text for accent */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 85%; /* Adjusted border color */
-    --input: 0 0% 85%; /* Adjusted input background */
-    --ring: 207 68% 54%; /* Primary color for rings */
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Minimal 2-Color Theme (Green + Neutrals) - Light Mode */
+    --background: 210 25% 96%; /* Light cool gray (e.g., #F5F7FA) */
+    --foreground: 212 39% 18%; /* Dark blue-gray text (e.g., #1C2D41) */
+    
+    --primary: 165 100% 25%;   /* Main Green (e.g., #008060) */
+    --primary-foreground: 0 0% 98%; /* White text on primary */
+    
+    --accent: 165 100% 25%;    /* Same as primary for consistency */
+    --accent-foreground: 0 0% 98%;  /* White text on accent */
 
-    /* Gradient and Shape Colors - Light Theme */
-    --gradient-start-light: hsl(207 68% 95%); /* Lighter blue based on primary */
-    --gradient-end-light: hsl(0 0% 97%);   /* Off-white, similar to original background */
-    --shape-1-color-light: hsl(var(--primary) / 0.12); /* Primary with low alpha */
-    --shape-2-color-light: hsl(var(--accent) / 0.08);  /* Accent with low alpha */
+    --card: 0 0% 100%;         /* White */
+    --card-foreground: 212 39% 18%; /* Dark blue-gray text */
+    
+    --popover: 0 0% 100%;      /* White */
+    --popover-foreground: 212 39% 18%; /* Dark blue-gray text */
+    
+    --secondary: 210 20% 92%;  /* Slightly darker cool gray */
+    --secondary-foreground: 212 39% 18%; /* Dark blue-gray text */
+    
+    --muted: 210 20% 88%;     /* Muted cool gray */
+    --muted-foreground: 212 25% 45%; /* Medium blue-gray text */
+    
+    --destructive: 0 84.2% 60.2%; /* Standard red for destructive actions */
+    --destructive-foreground: 0 0% 98%; /* Light text on destructive */
+    
+    --border: 210 15% 88%;     /* Subtle border */
+    --input: 210 15% 88%;      /* Input border, background often matches page bg */
+    --ring: 165 100% 25%;      /* Main Green for focus rings */
+
+    /* Chart colors - Monochromatic based on primary */
+    --chart-1: 165 100% 25%;   /* Primary Green */
+    --chart-2: 165 80% 35%;    /* Lighter shade */
+    --chart-3: 165 60% 45%;    /* Even lighter */
+    --chart-4: 165 40% 55%;
+    --chart-5: 165 20% 65%;
+
+    /* Sidebar colors - Light Theme */
+    --sidebar-background: 210 20% 94%; /* Slightly different from page bg or same */
+    --sidebar-foreground: 212 39% 18%;   /* Main text color */
+    --sidebar-primary: 165 100% 25%;     /* Main Green */
+    --sidebar-primary-foreground: 0 0% 98%; /* White text on green */
+    --sidebar-accent: 210 20% 90%;       /* Hover/active bg for items */
+    --sidebar-accent-foreground: 165 100% 25%; /* Green text on hover/active */
+    --sidebar-border: 210 15% 85%;
+    --sidebar-ring: 165 100% 25%;
+
+    /* Gradient and Shape Colors - Light Theme (subtle, based on primary & background) */
+    --gradient-start-light: hsl(var(--primary) / 0.03); /* Very subtle primary shade */
+    --gradient-end-light: hsl(var(--background));   /* Main background */
+    --shape-1-color-light: hsl(var(--primary) / 0.06); /* Subtle primary for shapes */
+    --shape-2-color-light: hsl(var(--primary) / 0.04);  /* Even more subtle primary */
+    
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 220 20% 10%; /* Original_dark_background, can be used as fallback or by components */
-    --foreground: 0 0% 95%; /* Off-white */
-    --card: 220 20% 13%; /* Slightly lighter than background */
-    --card-foreground: 0 0% 95%;
-    --popover: 220 20% 13%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 207 68% 54%; /* #3490dc calming blue (same as light) */
-    --primary-foreground: 0 0% 98%; /* Light text on primary */
-    --secondary: 220 20% 18%; /* Darker secondary */
-    --secondary-foreground: 0 0% 95%;
-    --muted: 220 20% 22%; /* Darker muted */
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 167 44% 58%; /* #64c5b1 teal (same as light) */
-    --accent-foreground: 0 0% 9%; /* Dark text for accent (teal is light enough) */
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 20% 25%; /* Adjusted border for dark */
-    --input: 220 20% 25%; /* Adjusted input for dark */
-    --ring: 207 68% 54%; /* Primary color for rings */
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Minimal 2-Color Theme (Green + Neutrals) - Dark Mode */
+    --background: 215 28% 17%; /* Dark Gray-Blue (e.g., #111827) */
+    --foreground: 220 13% 91%; /* Light Gray-Blue text (e.g., #E5E7EB) */
 
-    /* Gradient and Shape Colors - Dark Theme */
-    --gradient-start-dark: hsl(220 20% 15%); /* Slightly lighter version of dark background */
-    --gradient-end-dark: hsl(220 20% 8%);   /* Slightly darker version of dark background */
-    --shape-1-color-dark: hsl(var(--primary) / 0.1);  /* Primary with low alpha */
-    --shape-2-color-dark: hsl(var(--accent) / 0.07); /* Accent with low alpha */
+    --primary: 158 80% 42%;    /* Bright Green (e.g., #10B981) for contrast */
+    --primary-foreground: 215 28% 10%; /* Dark text on bright green */
+
+    --accent: 158 80% 42%;     /* Same as primary */
+    --accent-foreground: 215 28% 10%;  /* Dark text on bright green */
+
+    --card: 215 25% 22%;       /* Slightly lighter dark gray-blue */
+    --card-foreground: 220 13% 91%; /* Light Gray-Blue text */
+
+    --popover: 215 25% 22%;    /* Slightly lighter dark gray-blue */
+    --popover-foreground: 220 13% 91%; /* Light Gray-Blue text */
+
+    --secondary: 215 20% 27%;  /* Another shade of dark gray-blue */
+    --secondary-foreground: 220 13% 91%;
+
+    --muted: 215 18% 32%;      /* Muted dark gray-blue */
+    --muted-foreground: 220 10% 65%; /* Muted light gray-blue */
+
+    --destructive: 0 70% 50%;    /* Adjusted red for dark mode */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 20% 30%;     /* Subtle border for dark mode */
+    --input: 215 20% 30%;      /* Input border */
+    --ring: 158 80% 42%;       /* Bright Green for focus rings */
+
+    /* Chart colors - Monochromatic based on primary (dark mode) */
+    --chart-1: 158 80% 42%;    /* Primary Bright Green */
+    --chart-2: 158 70% 52%;    /* Lighter shade */
+    --chart-3: 158 60% 62%;
+    --chart-4: 158 50% 72%;
+    --chart-5: 158 40% 82%;
+
+    /* Sidebar colors - Dark Theme */
+    --sidebar-background: 215 25% 15%; /* Slightly different from page bg or same */
+    --sidebar-foreground: 220 13% 91%;   /* Main light text */
+    --sidebar-primary: 158 80% 42%;      /* Bright Green */
+    --sidebar-primary-foreground: 215 28% 10%; /* Dark text on bright green */
+    --sidebar-accent: 215 20% 25%;       /* Hover/active bg for items */
+    --sidebar-accent-foreground: 158 80% 42%; /* Bright green text on hover/active */
+    --sidebar-border: 215 20% 22%;
+    --sidebar-ring: 158 80% 42%;
+
+    /* Gradient and Shape Colors - Dark Theme (subtle, based on primary & background) */
+    --gradient-start-dark: hsl(var(--primary) / 0.05); /* Very subtle primary shade */
+    --gradient-end-dark: hsl(var(--background));   /* Main background */
+    --shape-1-color-dark: hsl(var(--primary) / 0.04);  /* Subtle primary for shapes */
+    --shape-2-color-dark: hsl(var(--primary) / 0.03); /* Even more subtle primary */
   }
 
   * {
@@ -94,36 +121,36 @@
 
   body {
     @apply text-foreground;
-    font-family: var(--font-manrope), Arial, Helvetica, sans-serif; /* Changed to Manrope */
+    font-family: var(--font-manrope), Arial, Helvetica, sans-serif; /* Manrope font */
     min-height: 100vh;
-    background-color: var(--gradient-end-light); /* Fallback */
-    background-image: linear-gradient(135deg, var(--gradient-start-light) 0%, var(--gradient-end-light) 100%);
-    position: relative; /* Context for pseudo-elements if they were absolute */
-    overflow-x: hidden; /* Prevent horizontal scroll from large shapes */
+    background-color: hsl(var(--gradient-end-light)); /* Fallback */
+    background-image: linear-gradient(135deg, hsl(var(--gradient-start-light)) 0%, hsl(var(--gradient-end-light)) 100%);
+    position: relative; 
+    overflow-x: hidden; 
   }
 
   .dark body {
-    background-color: var(--gradient-end-dark); /* Fallback */
-    background-image: linear-gradient(135deg, var(--gradient-start-dark) 0%, var(--gradient-end-dark) 100%);
+    background-color: hsl(var(--gradient-end-dark)); /* Fallback */
+    background-image: linear-gradient(135deg, hsl(var(--gradient-start-dark)) 0%, hsl(var(--gradient-end-dark)) 100%);
   }
 
   /* Abstract Shapes */
   body::before,
   body::after {
     content: "";
-    position: fixed; /* Fixed position to stay in viewport background */
+    position: fixed; 
     border-radius: 50%;
-    z-index: -1; /* Behind all page content */
-    filter: blur(90px); /* Soft, diffuse shapes */
-    will-change: transform, opacity; /* Hint for animation performance */
+    z-index: -1; 
+    filter: blur(90px); 
+    will-change: transform, opacity; 
   }
 
   /* Light theme shapes */
   body::before {
-    width: clamp(350px, 45vw, 550px); /* Responsive size */
+    width: clamp(350px, 45vw, 550px); 
     height: clamp(350px, 45vw, 550px);
     background: var(--shape-1-color-light);
-    top: -5%; /* Positioned partially off-screen */
+    top: -5%; 
     left: -10%;
     animation: floatShapeAnim1 28s infinite alternate ease-in-out;
   }
@@ -132,10 +159,10 @@
     width: clamp(300px, 40vw, 500px);
     height: clamp(300px, 40vw, 500px);
     background: var(--shape-2-color-light);
-    bottom: -8%; /* Positioned partially off-screen */
+    bottom: -8%; 
     right: -12%;
     animation: floatShapeAnim2 32s infinite alternate ease-in-out;
-    animation-delay: -4s; /* Stagger animation */
+    animation-delay: -4s; 
   }
 
   /* Dark theme shapes */
