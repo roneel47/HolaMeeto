@@ -35,7 +35,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/roneel47/HolaMeeto
     cd HolaMeeto
     ```
 
