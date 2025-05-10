@@ -28,7 +28,7 @@ export default function InstantConnectForm() {
   useEffect(() => {
     setIsClient(true);
     try {
-      const storedHistory = localStorage.getItem('instantConnectHistory');
+      const storedHistory = localStorage.getItem('holaMeetoHistory'); // Updated localStorage key
       if (storedHistory) {
         setMeetingHistory(JSON.parse(storedHistory));
       }
@@ -45,7 +45,7 @@ export default function InstantConnectForm() {
   useEffect(() => {
     if (isClient) {
       try {
-        localStorage.setItem('instantConnectHistory', JSON.stringify(meetingHistory));
+        localStorage.setItem('holaMeetoHistory', JSON.stringify(meetingHistory)); // Updated localStorage key
       } catch (error) {
         console.error("Failed to save meeting history to localStorage:", error);
         toast({
@@ -67,7 +67,7 @@ export default function InstantConnectForm() {
   const handleGenerateMeeting = () => {
     const randomPart = Math.random().toString(36).substring(2, 9);
     const safeNickname = nickname.trim().replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_-]/g, '');
-    const roomName = `InstantConnect-${safeNickname ? `${safeNickname}-` : ''}${randomPart}`;
+    const roomName = `HolaMeeto-${safeNickname ? `${safeNickname}-` : ''}${randomPart}`; // Updated prefix
     const newLink = `https://meet.jit.si/${roomName}`;
     
     setCurrentMeetingLink(newLink);
@@ -187,7 +187,7 @@ export default function InstantConnectForm() {
           <Input
             id="nickname"
             type="text"
-            placeholder="E.g., Project Alpha, Team Sync"
+            placeholder="E.g., Proyecto Sol, Charla Rápida"
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
             className="text-base"
@@ -195,7 +195,7 @@ export default function InstantConnectForm() {
         </div>
         <Button
           onClick={handleGenerateMeeting}
-          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6"
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6" // Updated button color to primary
           aria-label="Start a new meeting"
         >
           <PlusCircle className="mr-2 h-5 w-5" />

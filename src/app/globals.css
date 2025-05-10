@@ -6,113 +6,113 @@
 
 @layer base {
   :root {
-    /* Minimal 2-Color Theme (Green + Neutrals) - Light Mode */
-    --background: 210 25% 96%; /* Light cool gray (e.g., #F5F7FA) */
-    --foreground: 212 39% 18%; /* Dark blue-gray text (e.g., #1C2D41) */
+    /* Mexican/Spanish Inspired Theme - Light Mode */
+    --background: 35 50% 96%; /* Very light warm beige */
+    --foreground: 25 50% 20%; /* Dark reddish-brown */
     
-    --primary: 165 100% 25%;   /* Main Green (e.g., #008060) */
-    --primary-foreground: 0 0% 98%; /* White text on primary */
+    --primary: 20 85% 55%;   /* Vibrant terracotta/rust (e.g., #D96D49) */
+    --primary-foreground: 35 100% 98%; /* Very light cream */
     
-    --accent: 165 100% 25%;    /* Same as primary for consistency */
-    --accent-foreground: 0 0% 98%;  /* White text on accent */
+    --accent: 40 90% 60%;    /* Warm golden yellow (e.g., #F2C94C) */
+    --accent-foreground: 25 50% 20%;  /* Dark reddish-brown on accent */
 
-    --card: 0 0% 100%;         /* White */
-    --card-foreground: 212 39% 18%; /* Dark blue-gray text */
+    --card: 40 60% 97%;         /* Creamy off-white */
+    --card-foreground: 25 50% 20%; /* Dark reddish-brown */
     
-    --popover: 0 0% 100%;      /* White */
-    --popover-foreground: 212 39% 18%; /* Dark blue-gray text */
+    --popover: 40 60% 97%;      /* Creamy off-white */
+    --popover-foreground: 25 50% 20%; /* Dark reddish-brown */
     
-    --secondary: 210 20% 92%;  /* Slightly darker cool gray */
-    --secondary-foreground: 212 39% 18%; /* Dark blue-gray text */
+    --secondary: 35 40% 90%;  /* Slightly darker warm beige */
+    --secondary-foreground: 25 50% 20%; /* Dark reddish-brown */
     
-    --muted: 210 20% 88%;     /* Muted cool gray */
-    --muted-foreground: 212 25% 45%; /* Medium blue-gray text */
+    --muted: 35 30% 85%;     /* Muted warm beige */
+    --muted-foreground: 25 35% 45%; /* Medium reddish-brown */
     
-    --destructive: 0 84.2% 60.2%; /* Standard red for destructive actions */
+    --destructive: 0 84.2% 60.2%; /* Standard red */
     --destructive-foreground: 0 0% 98%; /* Light text on destructive */
     
-    --border: 210 15% 88%;     /* Subtle border */
-    --input: 210 15% 88%;      /* Input border, background often matches page bg */
-    --ring: 165 100% 25%;      /* Main Green for focus rings */
+    --border: 35 25% 80%;     /* Soft warm border */
+    --input: 35 25% 80%;      /* Input border */
+    --ring: 20 85% 55%;      /* Primary terracotta for focus rings */
 
     /* Chart colors - Monochromatic based on primary */
-    --chart-1: 165 100% 25%;   /* Primary Green */
-    --chart-2: 165 80% 35%;    /* Lighter shade */
-    --chart-3: 165 60% 45%;    /* Even lighter */
-    --chart-4: 165 40% 55%;
-    --chart-5: 165 20% 65%;
+    --chart-1: 20 85% 55%;   /* Primary Terracotta */
+    --chart-2: 20 75% 65%;    /* Lighter shade */
+    --chart-3: 20 65% 75%;    /* Even lighter */
+    --chart-4: 20 55% 85%;
+    --chart-5: 20 45% 90%;
 
     /* Sidebar colors - Light Theme */
-    --sidebar-background: 210 20% 94%; /* Slightly different from page bg or same */
-    --sidebar-foreground: 212 39% 18%;   /* Main text color */
-    --sidebar-primary: 165 100% 25%;     /* Main Green */
-    --sidebar-primary-foreground: 0 0% 98%; /* White text on green */
-    --sidebar-accent: 210 20% 90%;       /* Hover/active bg for items */
-    --sidebar-accent-foreground: 165 100% 25%; /* Green text on hover/active */
-    --sidebar-border: 210 15% 85%;
-    --sidebar-ring: 165 100% 25%;
+    --sidebar-background: 35 45% 94%; /* Slightly different warm beige */
+    --sidebar-foreground: 25 50% 20%;   /* Dark reddish-brown */
+    --sidebar-primary: 20 85% 55%;     /* Primary Terracotta */
+    --sidebar-primary-foreground: 35 100% 98%; /* Very light cream */
+    --sidebar-accent: 35 40% 90%;       /* Hover/active bg for items - darker warm beige */
+    --sidebar-accent-foreground: 20 85% 55%; /* Terracotta text on hover/active */
+    --sidebar-border: 35 25% 82%;
+    --sidebar-ring: 20 85% 55%;
 
-    /* Gradient and Shape Colors - Light Theme (subtle, based on primary & background) */
-    --gradient-start-light: hsl(var(--primary) / 0.03); /* Very subtle primary shade */
+    /* Gradient and Shape Colors - Light Theme */
+    --gradient-start-light: hsl(var(--primary) / 0.05); /* Very subtle primary shade */
     --gradient-end-light: hsl(var(--background));   /* Main background */
-    --shape-1-color-light: hsl(var(--primary) / 0.06); /* Subtle primary for shapes */
-    --shape-2-color-light: hsl(var(--primary) / 0.04);  /* Even more subtle primary */
+    --shape-1-color-light: hsl(var(--accent) / 0.1); /* Subtle accent for shapes */
+    --shape-2-color-light: hsl(var(--primary) / 0.07);  /* Subtle primary for shapes */
     
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Minimal 2-Color Theme (Green + Neutrals) - Dark Mode */
-    --background: 215 28% 17%; /* Dark Gray-Blue (e.g., #111827) */
-    --foreground: 220 13% 91%; /* Light Gray-Blue text (e.g., #E5E7EB) */
+    /* Mexican/Spanish Inspired Theme - Dark Mode */
+    --background: 25 20% 15%; /* Dark, warm, slightly desaturated brown */
+    --foreground: 35 40% 88%; /* Light warm beige text */
 
-    --primary: 158 80% 42%;    /* Bright Green (e.g., #10B981) for contrast */
-    --primary-foreground: 215 28% 10%; /* Dark text on bright green */
+    --primary: 20 80% 60%;    /* Brighter terracotta (e.g., #E67E59) */
+    --primary-foreground: 25 100% 95%; /* Light text on primary */
 
-    --accent: 158 80% 42%;     /* Same as primary */
-    --accent-foreground: 215 28% 10%;  /* Dark text on bright green */
+    --accent: 40 80% 65%;     /* Brighter golden yellow (e.g., #F5D15E) */
+    --accent-foreground: 25 20% 15%;  /* Dark text on accent */
 
-    --card: 215 25% 22%;       /* Slightly lighter dark gray-blue */
-    --card-foreground: 220 13% 91%; /* Light Gray-Blue text */
+    --card: 25 18% 20%;       /* Slightly lighter dark brown */
+    --card-foreground: 35 40% 88%; /* Light warm beige text */
 
-    --popover: 215 25% 22%;    /* Slightly lighter dark gray-blue */
-    --popover-foreground: 220 13% 91%; /* Light Gray-Blue text */
+    --popover: 25 18% 20%;    /* Slightly lighter dark brown */
+    --popover-foreground: 35 40% 88%; /* Light warm beige text */
 
-    --secondary: 215 20% 27%;  /* Another shade of dark gray-blue */
-    --secondary-foreground: 220 13% 91%;
+    --secondary: 25 15% 25%;  /* Another shade of dark brown */
+    --secondary-foreground: 35 40% 88%;
 
-    --muted: 215 18% 32%;      /* Muted dark gray-blue */
-    --muted-foreground: 220 10% 65%; /* Muted light gray-blue */
+    --muted: 25 12% 30%;      /* Muted dark brown */
+    --muted-foreground: 35 30% 70%; /* Muted light beige */
 
-    --destructive: 0 70% 50%;    /* Adjusted red for dark mode */
+    --destructive: 0 70% 55%;    /* Adjusted red for dark mode */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 20% 30%;     /* Subtle border for dark mode */
-    --input: 215 20% 30%;      /* Input border */
-    --ring: 158 80% 42%;       /* Bright Green for focus rings */
+    --border: 25 15% 28%;     /* Subtle border for dark mode */
+    --input: 25 15% 28%;      /* Input border */
+    --ring: 20 80% 60%;       /* Brighter Terracotta for focus rings */
 
     /* Chart colors - Monochromatic based on primary (dark mode) */
-    --chart-1: 158 80% 42%;    /* Primary Bright Green */
-    --chart-2: 158 70% 52%;    /* Lighter shade */
-    --chart-3: 158 60% 62%;
-    --chart-4: 158 50% 72%;
-    --chart-5: 158 40% 82%;
+    --chart-1: 20 80% 60%;    /* Primary Bright Terracotta */
+    --chart-2: 20 70% 70%;    /* Lighter shade */
+    --chart-3: 20 60% 75%;
+    --chart-4: 20 50% 80%;
+    --chart-5: 20 40% 85%;
 
     /* Sidebar colors - Dark Theme */
-    --sidebar-background: 215 25% 15%; /* Slightly different from page bg or same */
-    --sidebar-foreground: 220 13% 91%;   /* Main light text */
-    --sidebar-primary: 158 80% 42%;      /* Bright Green */
-    --sidebar-primary-foreground: 215 28% 10%; /* Dark text on bright green */
-    --sidebar-accent: 215 20% 25%;       /* Hover/active bg for items */
-    --sidebar-accent-foreground: 158 80% 42%; /* Bright green text on hover/active */
-    --sidebar-border: 215 20% 22%;
-    --sidebar-ring: 158 80% 42%;
+    --sidebar-background: 25 18% 12%; /* Darker warm brown for sidebar */
+    --sidebar-foreground: 35 40% 88%;   /* Light warm beige text */
+    --sidebar-primary: 20 80% 60%;      /* Bright Terracotta */
+    --sidebar-primary-foreground: 25 100% 95%; /* Light text on primary */
+    --sidebar-accent: 25 15% 22%;       /* Hover/active bg for items */
+    --sidebar-accent-foreground: 20 80% 60%; /* Bright terracotta text on hover/active */
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: 20 80% 60%;
 
-    /* Gradient and Shape Colors - Dark Theme (subtle, based on primary & background) */
-    --gradient-start-dark: hsl(var(--primary) / 0.05); /* Very subtle primary shade */
+    /* Gradient and Shape Colors - Dark Theme */
+    --gradient-start-dark: hsl(var(--primary) / 0.08); /* Very subtle primary shade */
     --gradient-end-dark: hsl(var(--background));   /* Main background */
-    --shape-1-color-dark: hsl(var(--primary) / 0.04);  /* Subtle primary for shapes */
-    --shape-2-color-dark: hsl(var(--primary) / 0.03); /* Even more subtle primary */
+    --shape-1-color-dark: hsl(var(--accent) / 0.12);  /* Subtle accent for shapes */
+    --shape-2-color-dark: hsl(var(--primary) / 0.1); /* Subtle primary for shapes */
   }
 
   * {
