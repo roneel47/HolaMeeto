@@ -53,13 +53,13 @@
     --sidebar-ring: 20 85% 55%;
 
     /* Gradient and Shape Colors - Light Theme */
-    --gradient-color-start-light-val: 15 80% 45%; /* More vivid Dark Orangish Red */
-    --gradient-color-end-light-val: 30 90% 68%;   /* Richer, slightly darker Light Orange */
+    --gradient-color-start-light-val: 18 90% 52%; /* Vibrant Dark Orange/Reddish-Orange e.g. #F26B18 */
+    --gradient-color-end-light-val: 36 95% 65%;   /* Bright Warm Orange e.g. #FDBC4A */
     --gradient-start-light: hsl(var(--gradient-color-start-light-val));
     --gradient-end-light: hsl(var(--gradient-color-end-light-val));
     
-    --shape-1-color-light: hsl(var(--accent) / 0.25); /* Increased opacity for accent shape */
-    --shape-2-color-light: hsl(var(--primary) / 0.20);  /* Increased opacity for primary shape */
+    --shape-1-color-light: hsl(var(--accent) / 0.25); 
+    --shape-2-color-light: hsl(var(--primary) / 0.20);  
     
     --radius: 0.5rem;
   }
@@ -112,13 +112,13 @@
     --sidebar-ring: 20 80% 60%;
 
     /* Gradient and Shape Colors - Dark Theme */
-    --gradient-color-start-dark-val: 15 55% 28%; 
-    --gradient-color-end-dark-val: 35 70% 42%;  
+    --gradient-color-start-dark-val: 18 80% 35%; /* Dark, rich orange-brown e.g. #8F3A0F */
+    --gradient-color-end-dark-val: 36 85% 48%;   /* Warm, muted orange for dark mode e.g. #D68C29 */
     --gradient-start-dark: hsl(var(--gradient-color-start-dark-val));
     --gradient-end-dark: hsl(var(--gradient-color-end-dark-val));
     
-    --shape-1-color-dark: hsl(var(--accent) / 0.28);  /* Increased opacity for accent shape */
-    --shape-2-color-dark: hsl(var(--primary) / 0.22); /* Increased opacity for primary shape */
+    --shape-1-color-dark: hsl(var(--accent) / 0.28);  
+    --shape-2-color-dark: hsl(var(--primary) / 0.22); 
   }
 
   * {
