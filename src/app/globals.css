@@ -94,7 +94,7 @@
 
   body {
     @apply text-foreground;
-    font-family: var(--font-poppins), Arial, Helvetica, sans-serif; /* Changed to Poppins */
+    font-family: var(--font-manrope), Arial, Helvetica, sans-serif; /* Changed to Manrope */
     min-height: 100vh;
     background-color: var(--gradient-end-light); /* Fallback */
     background-image: linear-gradient(135deg, var(--gradient-start-light) 0%, var(--gradient-end-light) 100%);
