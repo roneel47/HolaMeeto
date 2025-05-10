@@ -147,7 +147,7 @@ export default function InstantConnectForm() {
    * @param linkToCopy - The string (URL) to be copied.
    */
   const handleCopyToClipboard = async (linkToCopy: string) => {
-    if (!navigator.clipboard) {
+    if (!isClient || !navigator.clipboard) {
       toast({
         title: "Clipboard Not Available",
         description: "Sorry, your browser does not support clipboard access.",
@@ -176,9 +176,9 @@ export default function InstantConnectForm() {
    * Falls back to copying the link if Web Share API is not supported.
    */
   const handleShareLink = async () => {
-    if (!currentMeetingLink) return; // Should not happen if button is visible
+    if (!currentMeetingLink || !isClient) return; 
 
-    if (navigator.share) { // Check if Web Share API is supported
+    if (navigator.share) { 
       try {
         await navigator.share({
           title: 'Join my Jitsi Meeting on HolaMeeto',
@@ -190,7 +190,6 @@ export default function InstantConnectForm() {
           description: "Meeting link shared successfully via your device's share dialog.",
         });
       } catch (err) {
-        // AbortError usually means the user cancelled the share operation, so no error toast needed.
         if ((err as DOMException).name !== 'AbortError') {
           console.error("Failed to share link:", err);
           toast({
@@ -201,7 +200,6 @@ export default function InstantConnectForm() {
         }
       }
     } else {
-      // Fallback for browsers that don't support navigator.share
       handleCopyToClipboard(currentMeetingLink);
       toast({
         title: "Sharing Not Supported by Browser",
@@ -215,15 +213,24 @@ export default function InstantConnectForm() {
    * @param link - The URL of the Jitsi meeting to open.
    */
   const handleOpenLink = (link: string) => {
-    window.open(link, '_blank', 'noopener,noreferrer');
+    if(isClient) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
   };
 
   /**
    * Removes a specific meeting item from the history.
+   * If the removed item's link matches the currentMeetingLink, currentMeetingLink is cleared.
    * @param idToRemove - The unique ID of the MeetingHistoryItem to remove.
    */
   const handleRemoveFromHistory = (idToRemove: string) => {
-    setMeetingHistory(prevHistory => prevHistory.filter(item => item.id !== idToRemove));
+    setMeetingHistory(prevHistory => {
+      const itemToRemove = prevHistory.find(item => item.id === idToRemove);
+      if (itemToRemove && itemToRemove.link === currentMeetingLink) {
+        setCurrentMeetingLink(null);
+      }
+      return prevHistory.filter(item => item.id !== idToRemove);
+    });
     toast({
       title: "Meeting Removed",
       description: "The selected meeting has been removed from your history.",
@@ -231,10 +238,11 @@ export default function InstantConnectForm() {
   };
 
   /**
-   * Clears all items from the meeting history.
+   * Clears all items from the meeting history and clears the currentMeetingLink.
    */
   const handleClearHistory = () => {
     setMeetingHistory([]);
+    setCurrentMeetingLink(null); // Clear the current meeting link as well
     toast({
       title: "History Cleared",
       description: "All recent meeting links have been removed from history.",
@@ -249,7 +257,7 @@ export default function InstantConnectForm() {
    */
   const formatTimestamp = (timestamp: number): string => {
     if (!isClient) return ''; // Prevent server/client mismatch for dates
-    return new Date(timestamp).toLocaleString(undefined, { // Uses browser's default locale
+    return new Date(timestamp).toLocaleString(undefined, { 
       dateStyle: 'medium',
       timeStyle: 'short'
     });
@@ -309,15 +317,15 @@ export default function InstantConnectForm() {
                 {currentMeetingLink}
               </p>
               <div className="flex flex-wrap gap-2">
-                <Button variant="outline" size="sm" onClick={() => handleCopyToClipboard(currentMeetingLink)} aria-label="Copy meeting link to clipboard">
+                <Button variant="outline" size="sm" onClick={() => currentMeetingLink && handleCopyToClipboard(currentMeetingLink)} aria-label="Copy meeting link to clipboard" disabled={!currentMeetingLink}>
                   <Copy className="mr-2 h-4 w-4" /> Copy Link
                 </Button>
-                {isClient && navigator.share && ( // Only show share button if API is available
-                  <Button variant="outline" size="sm" onClick={handleShareLink} aria-label="Share meeting link">
+                {isClient && navigator.share && ( 
+                  <Button variant="outline" size="sm" onClick={handleShareLink} aria-label="Share meeting link" disabled={!currentMeetingLink}>
                     <Share2 className="mr-2 h-4 w-4" /> Share Link
                   </Button>
                 )}
-                <Button variant="outline" size="sm" onClick={() => handleOpenLink(currentMeetingLink)} aria-label="Open meeting link in a new tab">
+                <Button variant="outline" size="sm" onClick={() => currentMeetingLink && handleOpenLink(currentMeetingLink)} aria-label="Open meeting link in a new tab" disabled={!currentMeetingLink}>
                   <ExternalLink className="mr-2 h-4 w-4" /> Open Meeting
                 </Button>
               </div>
@@ -357,7 +365,6 @@ export default function InstantConnectForm() {
               >
                 <div className="flex-grow">
                   <p id={`meeting-title-${item.id}`} className="font-medium text-sm break-all text-primary">
-                    {/* Display nickname if available, then the unique part of the link */}
                     {item.nickname ? `${item.nickname} - ` : ''}
                     {item.link.substring(item.link.lastIndexOf('/') + 1)}
                   </p>
