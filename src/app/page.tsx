@@ -1,3 +1,4 @@
+
 import InstantConnectForm from '@/components/InstantConnectForm';
 import { LinkIcon } from 'lucide-react'; // Changed from Zap to LinkIcon for better thematic fit
 
@@ -18,8 +19,10 @@ export default function Home() {
       </div>
       <footer className="mt-12 text-center text-sm text-muted-foreground relative z-10">
         <p>&copy; {new Date().getFullYear()} HolaMeeto. All rights reserved.</p>
+        <p>Roneel V. – Creator of HolaMeeto 🌮</p>
         <p>Powered by Jitsi Meet</p>
       </footer>
     </main>
   );
 }
+
