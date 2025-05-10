@@ -62,7 +62,6 @@ To get a local copy up and running, follow these simple steps.
 -   **Icons:** [Lucide React](https://lucide.dev/)
 -   **Font:** [Manrope](https://fonts.google.com/specimen/Manrope)
 -   **Video Conferencing Backend:** [Jitsi Meet](https://jitsi.org/jitsi-meet/) (public instance)
--   **(Potential for AI):** [Genkit](https://firebase.google.com/docs/genkit) is set up for potential future GenAI integrations.
 
 ## 🎨 Theme & Styling
 
