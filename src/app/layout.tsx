@@ -12,6 +12,9 @@ const manrope = Manrope({ // Instantiated Manrope
 export const metadata: Metadata = {
   title: 'HolaMeeto - Quick Jitsi Meet Links',
   description: 'Generate and share Jitsi Meet links instantly with HolaMeeto.',
+  icons: {
+    icon: '/holameeto-icon.png', // Added favicon
+  },
 };
 
 export default function RootLayout({
