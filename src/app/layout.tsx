@@ -13,9 +13,10 @@ export const metadata: Metadata = {
   title: 'HolaMeeto - Quick Jitsi Meet Links',
   description: 'Generate and share Jitsi Meet links instantly with HolaMeeto.',
   icons: {
-    icon: '/holameeto-icon.png', // Added favicon
-  },
+    icon: '/favicon.ico', // Reference the .ico file
+  },  
 };
+
 
 export default function RootLayout({
   children,
