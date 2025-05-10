@@ -2,7 +2,7 @@
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.x-black?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![ShadCN/UI](https://img.shields.io/badge/ShadCN/UI- mukaan%20-%23000000.svg?&style=flat&logo=shadcnui&logoColor=white)](https://ui.shadcn.com/)
+[![ShadCN/UI](https://img.shields.io/badge/ShadCN/UI-mukaan%20-%23000000.svg?&style=flat&logo=shadcnui&logoColor=white)](https://ui.shadcn.com/)
 
 Welcome to HolaMeeto! This application provides a super quick and easy way to generate unique Jitsi Meet links. No sign-ups, no fuss – just one click to create a meeting link and share it.
 
