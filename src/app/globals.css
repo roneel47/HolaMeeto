@@ -53,7 +53,7 @@
     --sidebar-ring: 20 85% 55%;
 
     /* Gradient and Shape Colors - Light Theme */
-    --gradient-start-light: hsl(var(--primary) / 0.05); /* Very subtle primary shade */
+    --gradient-start-light: hsl(var(--primary) / 0.1); /* Slightly more prominent primary shade */
     --gradient-end-light: hsl(var(--background));   /* Main background */
     --shape-1-color-light: hsl(var(--accent) / 0.1); /* Subtle accent for shapes */
     --shape-2-color-light: hsl(var(--primary) / 0.07);  /* Subtle primary for shapes */
@@ -109,7 +109,7 @@
     --sidebar-ring: 20 80% 60%;
 
     /* Gradient and Shape Colors - Dark Theme */
-    --gradient-start-dark: hsl(var(--primary) / 0.08); /* Very subtle primary shade */
+    --gradient-start-dark: hsl(var(--primary) / 0.15); /* Slightly more prominent primary shade */
     --gradient-end-dark: hsl(var(--background));   /* Main background */
     --shape-1-color-dark: hsl(var(--accent) / 0.12);  /* Subtle accent for shapes */
     --shape-2-color-dark: hsl(var(--primary) / 0.1); /* Subtle primary for shapes */
