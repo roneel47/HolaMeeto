@@ -96,3 +96,6 @@ HolaMeeto generates Jitsi Meet links by creating unique room names. The format i
 -   Powered by the open-source [Jitsi Meet](https://jitsi.org/jitsi-meet/) platform.
 
 Enjoy your instant meetings with HolaMeeto!
+<p align="center">
+  <img src="https://profile-counter.glitch.me/roneel47:HolaMeeto/count.svg" alt="Visitor Count" />
+</p>
